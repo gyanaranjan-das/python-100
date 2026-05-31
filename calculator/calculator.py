@@ -15,9 +15,16 @@ def divide(a,b):
 
 
 while True:
-    num1 = float(input("Enter the first number:"))
-    operator = input("Enter the operator (+, -, *, /): ")
-    num2 = float(input("Enter the second number:"))
+    expression = input(">>>")
+    parts = expression.split()
+    
+    if len(parts)!= 3:
+        print("Use: number operator number (e.g., 2 + 3)")
+        continue
+        
+    num1 = float(parts[0])
+    operator = parts[1]
+    num2 = float(parts[2])
 
     if operator == "+":
         print("Result =",add(num1,num2))
